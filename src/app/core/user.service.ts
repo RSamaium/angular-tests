@@ -20,10 +20,10 @@ export class UserService {
      return this.http.get<User[]>(this.url)
   }
 
-  addUser(user: User) {
+  addUser(user: User): Observable<User> {
     if (!user.name || !user.email) {
       throw new Error('Erreur')
     }
-    this.users.push(user)
+    return this.http.post<User>(this.url, user)
   }
 }

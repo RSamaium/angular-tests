@@ -79,11 +79,28 @@ describe('UserService', () => {
 
   })
 
-  it('add user in user list', () => {
+  it('add user', (done) => {
+    const expectedUser = USER_DATA
+
+    service.addUser(expectedUser).subscribe({
+      next: (user) => {
+         expect(user).toEqual(expectedUser)
+         done()
+      },
+      error: done.fail
+    })
+
+    const request = httpMock.expectOne(service.url)
+    expect(request.request.method).toBe('POST')
+
+    request.flush(expectedUser)
+  })
+
+  /*it('add user in user list', () => {
     const user = USER_DATA
     service.addUser(user)
     expect(service.users).toContain(user)
-  })
+  })*/
 
   afterEach(() => {
     httpMock.verify()
