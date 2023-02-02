@@ -1,3 +1,13 @@
+<form (ngSubmit)="createUser()">
+    <label>Nom</label>
+    <input type="text" name="name" [(ngModel)]="propName">
+
+    <label>Email</label>
+    <input type="text" name="email" [(ngModel)]="propEmail">
+
+    <button>Créer utilisateur</button>
+</form>
+
 <div *ngFor="let user of users" class="card">
     <h3>{{ user.name }}</h3>
     <p>{{ user.email }}</p>

@@ -1,0 +1,12 @@
+<ejs-datepicker id="firstdatepicker" [(ngModel)]="dateFrom" [ngModelOptions]="{standalone: true}"
+  format="dd/MM/yyyy"></ejs-datepicker>
+
+<button [disabled]="!dateFrom">Recherche</button>
+
+<ejs-grid [dataSource]='data' [allowPaging]="true" [allowSorting]="true" [pageSettings]="pageSettings" #grid>
+  <e-columns>
+    <e-column field='id' headerText='Order ID' textAlign='Right'></e-column>
+    <e-column field='name' headerText='Customer'></e-column>
+    <e-column field='date' headerText='Freight' textAlign='Right'></e-column>
+  </e-columns>
+</ejs-grid>
