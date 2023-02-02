@@ -1,27 +1,10 @@
-# AngularUnitTest02Fev
+Exercice : Écrivez un test unitaire pour vérifier la méthode addUser de UserService.
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 15.1.3.
+1. Créez une instance de UserService.
+2. Appelez la méthode addUser en fournissant un nouvel objet utilisateur avec toutes les propriétés requises: name and email. Lancer une erreur si une des propriétés n'a pas été renseignée
+3. Vérifiez que la méthode ajoute correctement l'utilisateur à la liste d'utilisateurs interne du service.
+4. Vérifiez que la méthode génère une erreur si l'objet utilisateur n'a pas toutes les propriétés requises ou si elles sont vides ou incorrectes. 
 
-## Development server
-
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
-
-## Code scaffolding
-
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
-
-## Build
-
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
-
-## Running unit tests
-
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+> Aide Jasmine (https://jasmine.github.io/api/edge/matchers)
+expect(() => ....).toThrowError()
+toContain()
